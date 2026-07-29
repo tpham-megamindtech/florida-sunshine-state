@@ -1,0 +1,55 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/*
+  Sunshine State Herald palette — Miami sunset meets Art Deco night.
+  Deliberately distinct from prior sites — in particular from the Golden
+  State Gazette (Pacific teal / sunset coral / warm sand): no teal, no
+  coral, no forest green, no navy/burgundy, no charcoal/steel.
+
+  - Citrus sunset  (#f2600c) : primary accent — Florida sun & orange groves
+  - Miami violet   (#6d28d9) : secondary accent — South Beach Art Deco at night
+  - Coconut cream  (#fff8f1) : page background — bright off-white
+  - Deep plum ink  (#1e1132) : text — a near-black violet
+*/
+@theme inline {
+  --color-background: #fff8f1;
+  --color-surface: #ffffff;
+  --color-surface-hover: #fffdfa;
+  --color-border: #f0e4d6;
+  --color-foreground: #1e1132;
+  --color-muted: #6b5f74;
+  --color-accent: #f2600c;
+  --color-accent-hover: #d24e06;
+  --color-violet: #6d28d9;
+  --color-violet-hover: #5b21b6;
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-poppins);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display), "Helvetica Neue", Arial, sans-serif;
+}
+
+::selection {
+  background: var(--color-violet);
+  color: #ffffff;
+}
+
+/* Thin scrollbar for horizontal category strips on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
